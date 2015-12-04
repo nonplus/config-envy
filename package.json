@@ -1,0 +1,52 @@
+{
+  "name": "config-envy",
+  "version": "0.0.1",
+  "description": "A CLI to download and use `.env` files from Amazon S3",
+  "main": "index.js",
+  "bin": {
+    "config-envy": "./bin/config-envy.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "istanbul cover _mocha",
+    "check-cov": "istanbul check-coverage",
+    "posttest": "npm run check-cov; npm run lint;",
+    "codeclimate": "cat ./coverage/lcov.info | codeclimate-test-reporter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VivintSolar/config-envy.git"
+  },
+  "keywords": [
+    "config",
+    "dotenv",
+    ".env",
+    "s3"
+  ],
+  "author": "ksmithut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VivintSolar/config-envy/issues"
+  },
+  "homepage": "https://github.com/VivintSolar/config-envy",
+  "dependencies": {
+    "aws-sdk": "^2.2.20",
+    "bluebird": "^3.0.6",
+    "commander": "^2.9.0",
+    "dotenv": "^1.2.0",
+    "object-assign": "^4.0.1",
+    "rc": "^1.1.5",
+    "string-template": "^0.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "chai-spies": "^0.7.1",
+    "codeclimate-test-reporter": "^0.1.1",
+    "eslint": "^1.10.3",
+    "eslint-config-ksmithut": "^1.0.0",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "mocha-lcov-reporter": "^1.0.0"
+  }
+}

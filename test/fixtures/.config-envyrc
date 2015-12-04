@@ -1,0 +1,16 @@
+{
+  "projectName": "config-envy",
+  "storage": "fs",
+  "defaults": {
+    "local": "config/{laneKey}.env",
+    "remotePath": "config/{laneKey}-remote.env"
+  },
+  "lanes": {
+    "prod": {
+      "env": "production"
+    },
+    "stage": {
+      "local": "config/staging.env"
+    }
+  }
+}
