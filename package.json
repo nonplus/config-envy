@@ -6,6 +6,18 @@
   "bin": {
     "config-envy": "./bin/config-envy.js"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "bin",
+    "lib/config.js",
+    "lib/replace/replace.js",
+    "lib/replace/package.json",
+    "lib/storage/storage.js",
+    "lib/storage/package.json",
+    "lib/storage/adapters"
+  ],
   "scripts": {
     "lint": "eslint .",
     "test": "istanbul cover _mocha",
