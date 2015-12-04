@@ -19,18 +19,20 @@ program
 
 // --config
 if (program.config) {
-  return console.log(config.configs.join('\n'));
+  console.log(config.configs.join('\n'));
+  process.exit(0);
 }
 
 // --list
 if (program.list) {
-  return console.log(Object.keys(config.lanes).join('\n'));
+  console.log(Object.keys(config.lanes).join('\n'));
+  process.exit(0);
 }
 
 // --init
 // Initializes the local .env files
 if (program.init) {
-  return Object.keys(config.lanes).forEach(function(laneKey) {
+  Object.keys(config.lanes).forEach(function(laneKey) {
     var lane = config.lanes[laneKey];
     var filepath = path.join(process.cwd(), lane.local);
 
@@ -42,6 +44,7 @@ if (program.init) {
       console.log('created "' + lane.local + '"');
     }
   });
+  process.exit(0);
 }
 
 // Parse the lane and methods out

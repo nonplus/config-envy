@@ -5,6 +5,7 @@
   "extends": "eslint-config-ksmithut",
   "rules": {
     "no-console": 0,
-    "global-require": 0
+    "global-require": 0,
+    "no-process-exit": 0
   }
 }
