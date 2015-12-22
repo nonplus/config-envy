@@ -8,7 +8,7 @@ var getConfig = require('./lib/config');
 
 module.exports = function(options) {
   options = assign({
-    env: process.NODE_ENV,
+    env: process.env.NODE_ENV,
     cwd: process.cwd(),
     localEnv: '.env',
     overrideProcess: false,
