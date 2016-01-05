@@ -13,6 +13,7 @@ module.exports = function(options) {
     localEnv: '.env',
     overrideProcess: false,
     silent: false,
+    extendProcess: true,
   }, options);
 
   var config = getConfig(options.cwd);
@@ -32,10 +33,12 @@ module.exports = function(options) {
 
   var env = assign({}, laneConfig, homeConfig);
 
-  if (options.overrideProcess) {
-    assign(process.env, env);
-  } else {
-    process.env = assign({}, env, process.env);
+  if (options.extendProcess) {
+    if (options.overrideProcess) {
+      assign(process.env, env);
+    } else {
+      process.env = assign({}, env, process.env);
+    }
   }
   return env;
 };
