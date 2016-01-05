@@ -1,6 +1,6 @@
 {
   "name": "config-envy",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A CLI to download and use `.env` files from Amazon S3",
   "main": "index.js",
   "bin": {
