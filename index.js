@@ -37,6 +37,7 @@ module.exports = function(options) {
   } else {
     process.env = assign({}, env, process.env);
   }
+  return env;
 };
 
 /**
