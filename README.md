@@ -107,7 +107,7 @@ The module is used to consume those `.env` files and put them into your
 
 ```js
 require('config-envy')({
-  env: process.NODE_ENV, // The environment config to pull from. Will be based on the `env` property of the lane
+  env: process.env.NODE_ENV, // The environment config to pull from. Will be based on the `env` property of the lane
   cwd: process.cwd(), // The current working directory to base storage options from
   localEnv: '.env', // The path to an overriding .env for the local environment
   overrideProcess: false, // Set to true if you want the existing environment variables to be overridden by your .env files

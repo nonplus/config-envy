@@ -84,6 +84,6 @@ function processLane(lane, name) {
       config.storageMethod.upload(lane, name);
       break;
     default:
-      throw new Error('Method needs to be "get" or "set". "' + method + '" given.');
+      throw new Error('Method needs to be "get" or "put". "' + method + '" given.');
   }
 }
