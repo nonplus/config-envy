@@ -11,7 +11,7 @@ var ORIG_ENV = Object.create(process.env);
 
 Promise.promisifyAll(fs);
 
-describe('config-envy cli', function() {
+describe('config-envy module', function() {
 
   before(function() {
     return Promise.all([
@@ -57,6 +57,17 @@ describe('config-envy cli', function() {
     /* eslint no-undefined: 0 */
     configEnvy({ env: 'dev', silent: false });
     expect(process.env.FOO).to.be.equal(undefined);
+  });
+
+  it('should not extend the process', function() {
+    var config = configEnvy({ env: 'production', extendProcess: false });
+
+    expect(process.env.FOO).to.be.equal(undefined);
+    expect(process.env.HELLO).to.be.equal(undefined);
+    expect(config).to.be.eql({
+      HELLO: 'world',
+      FOO: 'bar',
+    });
   });
 
 });
