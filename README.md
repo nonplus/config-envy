@@ -22,7 +22,7 @@ npm install -g config-envy # to install globally if you prefer
 You need to create a `.config-envyrc` file to configure your available
 configuration lanes and settings. It should look something like this:
 
-```json
+```js
 {
   "projectName": "yourProjectName", // This is required
   "storage": "s3", // This is required. It can be a built in storage method (like s3) or a path to your own storage method adapter
@@ -57,7 +57,7 @@ this config files.
 # Command-Line
 
 ```
-  Usage: config-envy [options] <lane|all> [get|set]
+  Usage: config-envy [options] <lane|all> [get|put]
 
   Options:
 

@@ -45,16 +45,16 @@
     "aws-sdk": "^2.2.20",
     "bluebird": "^3.0.6",
     "commander": "^2.9.0",
-    "dotenv": "^1.2.0",
+    "dotenv": "^2.0.0",
     "object-assign": "^4.0.1",
     "rc": "^1.1.5",
-    "string-template": "^0.2.1"
+    "string-template": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
     "chai-spies": "^0.7.1",
-    "codeclimate-test-reporter": "^0.1.1",
+    "codeclimate-test-reporter": "^0.3.0",
     "eslint": "^1.10.3",
     "eslint-config-ksmithut": "^1.0.0",
     "istanbul": "^0.4.1",
