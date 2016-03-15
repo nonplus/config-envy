@@ -37,6 +37,7 @@ if (program.init) {
     var lane = config.lanes[laneKey];
     var filepath = path.join(process.cwd(), lane.local);
 
+    mkdirp(path.dirname(filepath));
     try {
       fs.statSync(filepath);
       console.warn('"' + lane.local + '" alread exists');
