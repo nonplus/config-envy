@@ -1,6 +1,6 @@
 {
   "name": "config-envy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A CLI to download and use `.env` files from Amazon S3",
   "main": "index.js",
   "bin": {
@@ -46,6 +46,7 @@
     "bluebird": "^3.0.6",
     "commander": "^2.9.0",
     "dotenv": "^2.0.0",
+    "mkdirp": "^0.5.1",
     "object-assign": "^4.0.1",
     "rc": "^1.1.5",
     "string-template": "^1.0.0"

@@ -8,6 +8,7 @@ var path = require('path');
 var program = require('commander');
 var config = require('../lib/config')(process.cwd());
 var version = require('../package.json').version;
+var mkdirp = require('mkdirp');
 
 program
   .version(version)
@@ -36,6 +37,7 @@ if (program.init) {
     var lane = config.lanes[laneKey];
     var filepath = path.join(process.cwd(), lane.local);
 
+    mkdirp(path.dirname(filepath));
     try {
       fs.statSync(filepath);
       console.warn('"' + lane.local + '" alread exists');
@@ -78,6 +80,7 @@ function processLane(lane, name) {
 
   switch (method) {
     case 'get':
+      mkdirp(path.dirname(lane.localPath));
       config.storageMethod.download(lane, name);
       break;
     case 'put':
