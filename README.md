@@ -111,6 +111,7 @@ require('config-envy')({
   cwd: process.cwd(), // The current working directory to base storage options from
   localEnv: '.env', // The path to an overriding .env for the local environment
   overrideProcess: false, // Set to true if you want the existing environment variables to be overridden by your .env files
+  extendProcess: true, // Set to false if you want your .env files to have a higher priority than the process.env
   silent: false, // Set to true if you want to be notified of any errors that happen when trying to read your .env files
 });
 ```

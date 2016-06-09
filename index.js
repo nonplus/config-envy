@@ -34,12 +34,15 @@ module.exports = function(options) {
   var env = assign({}, laneConfig, homeConfig);
 
   if (options.extendProcess) {
-    if (options.overrideProcess) {
-      assign(process.env, env);
-    } else {
-      process.env = assign({}, env, process.env);
-    }
+    env = assign({}, process.env, env);
+  } else {
+    env = assign({}, env, process.env);
   }
+
+  if (options.overrideProcess) {
+    process.env = env;
+  }
+
   return env;
 };
 
