@@ -33,13 +33,13 @@ module.exports = function(options) {
 
   var env = assign({}, laneConfig, homeConfig);
 
-  if (options.extendProcess) {
+  if (options.overrideProcess) {
     env = assign({}, process.env, env);
   } else {
     env = assign({}, env, process.env);
   }
 
-  if (options.overrideProcess) {
+  if (options.extendProcess) {
     process.env = env;
   }
 
