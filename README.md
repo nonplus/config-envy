@@ -146,6 +146,23 @@ machine as outlined
 * `bucket` - The bucket you wish to save the file to.
 * `key` - The key or path you wish to save the file to in the given bucket.
 
+## `s3-cmk`
+
+This is a storage option that saves your original .env files in s3 encrypted with a customer master key (CMK).
+Note that with this adapter, you need to have your local credentials file set up on your machine as outlined
+[here](http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html#Creating_the_Shared_Credentials_File).
+
+You will need to first create a customer master key as outlined
+[here](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html).  Users uploading .env files and
+EC2 instances downloading them need to be configured to have access to the CMK.
+
+### Additional required options
+
+* `region` - The s3 region where the bucket lives.
+* `bucket` - The bucket you wish to save the file to.
+* `key` - The key or path you wish to save the file to in the given bucket.
+* `cmk` - The CMK key-id (`arn:aws:kms:...`) or alias (`alias/AliasName`) to use for encryption.
+
 ## Custom Adapters
 
 If you wish to use a custom adapter, put in the path to your custom adapter in
